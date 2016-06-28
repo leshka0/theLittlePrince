@@ -1,0 +1,514 @@
+
+/* line 4 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/app.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/gulp-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 297 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/gulp-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 14 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/index.styl */
+
+/* line 14 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/index.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/border.styl */
+
+/* line 10 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/border.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/clearfix.styl */
+
+/* line 28 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/clearfix.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/color-image.styl */
+
+/* line 4 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/color-image.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/flex.styl */
+
+/* line 196 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/flex.styl */
+
+/* line 90 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/gradients.styl */
+
+/* line 90 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/gradients.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/config.styl */
+
+/* line 11 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/config.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/iconic.styl */
+
+/* line 7 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/iconic.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/image.styl */
+
+/* line 25 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/image.styl */
+
+/* line 19 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/index.styl */
+
+/* line 19 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/index.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/base.styl */
+
+/* line 8 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/base.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/html5.styl */
+
+/* line 19 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/html5.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/links.styl */
+
+/* line 6 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/links.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/text.styl */
+
+/* line 30 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/text.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/embed.styl */
+
+/* line 7 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/embed.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/groups.styl */
+
+/* line 17 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/groups.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/forms.styl */
+
+/* line 69 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/forms.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/tables.styl */
+
+/* line 7 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/normalize/tables.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/overflow.styl */
+
+/* line 20 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/overflow.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/positions.styl */
+
+/* line 66 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/positions.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+
+/* line 78 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+
+/* line 5 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 5 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/index.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 12 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/aliases.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 9 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/ellipsis.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 8 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/hide-text.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 9 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/replace-text.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 2 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/text/shadow-stroke.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 11 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/vendor.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/config.styl */
+
+/* line 577 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/config.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/size.styl */
+
+/* line 28 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/size.styl */
+
+/* line 1 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_fonts.styl */
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url("../fonts/oxygenmono/BzV4DVOwAgGelLT9EC5xyrrIa-7acMAeDBVuclsi6Gc.woff") format('woff');
+}
+@font-face {
+  font-family: 'wendy';
+  src: local('wendy'), local('wendy'), url("../fonts/wendy/WendyLPStd-Medium.otf") format('woff');
+}
+@font-face {
+  font-family: 'Didot-ita';
+  src: local('Didot-ita'), local('Didot-ita'), url("../fonts/didot/DidotLTStd-Italic.otf") format('woff');
+}
+
+/* line 13 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_fonts.styl */
+
+/* line 3 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+
+/* line 4 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 14 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+
+/* line 16 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 18 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 20 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 22 : /Users/Robin/GitHub/webgl-transparent-video/node_modules/nib/lib/nib/reset.styl */
+a img {
+  border: none;
+}
+
+/* line 2 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+@media screen and (min-height: 700px) {
+
+/* line 4 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+  :root {
+    --introHeight: 20vh;
+    --titleHeight: 120px;
+    --creditsHeight: 250px;
+    --fontHeight: 24px;
+  }
+}
+@media screen and (max-height: 700px) {
+
+/* line 9 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+  :root {
+    --introHeight: 16vh;
+    --titleHeight: 100px;
+    --creditsHeight: 150px;
+    --fontHeight: 16px;
+  }
+}
+
+/* line 15 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 17 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 20 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+body {
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Oxygen Mono';
+}
+
+/* line 28 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+#dpr {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  transition: opacity 0.5s EASE;
+  background-size: 100%;
+  background-image: url("../img/DPR.svg");
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+/* line 44 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+#dpr:hover {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 47 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  font-family: 'wendy' !important;
+  color: #fff;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+/* line 57 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.logo.intro {
+  left: 10vw;
+  text-align: left;
+  top: var(--introHeight);
+  font-size: 130px;
+}
+
+/* line 63 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.interface {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  text-align: center;
+  font-family: 'arial';
+  color: #fff;
+  font-size: 20px;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+/* line 75 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.credits {
+  position: absolute;
+  top: calc(var(--introHeight) + var(--titleHeight));
+  width: 40vw;
+  font-family: 'Didot-ita';
+  color: #fff;
+  font-size: var(--fontHeight);
+  line-height: calc(var(--fontHeight) + 5px);
+}
+
+/* line 84 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.credits a:hover {
+  cursor: pointer;
+  color: #fbe553;
+  transition: all 0.2s ease;
+}
+
+/* line 89 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.titles {
+  left: 10vw;
+  text-align: left;
+  color: #747f9b;
+}
+
+/* line 94 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.artists {
+  left: calc(10vw + 200px);
+  text-align: left;
+}
+
+/* line 98 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.start {
+  cursor: pointer;
+  left: 10vw;
+  font-family: 'Didot-ita';
+  font-size: calc(var(--fontHeight) * 2);
+  color: #fbe553;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  position: absolute;
+  top: calc(var(--introHeight) + var(--titleHeight) + var(--creditsHeight));
+  width: auto !important;
+  display: inline-block;
+  text-align: left;
+}
+
+/* line 112 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.replay {
+  margin-right: 120px;
+}
+
+/* line 115 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.next {
+  margin-left: 120px;
+}
+
+/* line 118 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.chapters {
+  color: #525269;
+  font-size: 12px;
+  top: auto;
+  bottom: 40px;
+  letter-spacing: 3px;
+}
+
+/* line 125 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.chapters .actual {
+  padding-bottom: 5px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* line 130 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.chapters .prev {
+  padding-bottom: 5px;
+  color: #525269;
+  border-bottom: 1px solid #fff;
+}
+
+/* line 135 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.chapters .next,
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0a1a30;
+  transition: all 1s ease;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+
+/* line 148 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.debug {
+  visibility: hidden;
+}
+
+/* line 151 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.fadeOut {
+  transition: all 1s ease !important;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+/* line 155 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg {
+  font-family: 'Oxygen Mono' !important;
+  text-transform: uppercase;
+}
+
+/* line 159 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac {
+  z-index: 1 !important;
+}
+
+/* line 162 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac .dg li:not(.folder) {
+  background: rgba(0,0,0,0.85) !important;
+}
+
+/* line 165 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac .dg .c .slider-fg,
+.dg.ac .dg .c .slider:hover .slider-fg {
+  background: #fff !important;
+}
+
+/* line 169 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac .c .slider {
+  background: rgba(255,255,255,0.2) !important;
+}
+
+/* line 173 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac .dg .c input[type=text] {
+  background-color: #464542;
+}
+
+/* line 176 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac .hue-field {
+  width: 14px !important;
+}
+
+/* line 179 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+
+/* line 180 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac li.string input[type=text] {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* line 184 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+.dg.ac .cr.string {
+  border-left-color: #fff !important;
+}
+
+/* line 185 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_page.styl */
+
+/* line 541 : /Users/Robin/GitHub/webgl-transparent-video/src/stylus/_mixins.styl */

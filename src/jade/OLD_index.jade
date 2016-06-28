@@ -1,0 +1,33 @@
+doctype
+
+head
+
+	meta(charset='utf-8')
+	title webgl-app
+
+	if production
+		link(rel="stylesheet", href="css/app.min.css")
+	else
+		link(rel="stylesheet", href="css/app.css")
+
+body(style="background-color: black")
+	div.fade
+	p.logo Le petit prince
+	div.interface.replay replay
+	div.interface.next next
+	div.interface.chapters 
+		span.prev HOME 1 . 2 . 3 . 4 . 5 . 
+		span.actual 6
+		|  . 7 . 8 . 9 . 10 . 11 . 12 . 13 . 14 . 15 . 16 . 17 . 18 . 19 . 20 . 21 . 22 . 23 . 24 . 25 . 26 . 27 . CREDITS
+
+	main#app
+	
+	video(id="video" autoplay loop style="display:none")
+		source(src="textures/prince6.webm" type='video/webm')
+	video(id="video-sky" autoplay loop style="display:none")
+		source(src="textures/sky6.webm" type='video/webm')
+	
+	if production	
+		script(src="js/bundle.min.js")
+	else
+		script(src="js/bundle.js")
