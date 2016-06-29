@@ -3,7 +3,14 @@ $easing: ease;
 
 body {
 	font-size: 16px;
+	background-color: black;
+	color: white;
 }
+
+a {
+	color: white;
+}
+
 .o-page {
 	position: absolute;
 	width: 100%;
@@ -31,4 +38,15 @@ body {
 .example-leave.example-leave-active {
 	opacity: 0;
 	transition: opacity $duration $easing;
+}
+
+.webgl {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.nav {
+	position: absolute;
+	z-index: 1;
 }

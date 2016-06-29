@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import { BASE_URL } from '../../constants/environment'
-import TweenMax from 'gsap'
 
-export default class Home extends Component {
+export default class End extends Component {
 
 	componentDidMount() {
 
@@ -16,11 +14,11 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div>
-				<section className="o-page home">
+				<section className="o-page end">
 					<div className="center" ref="center">
-						<h1>The Little Prince</h1>
-						<Link to="/scene1">
-							Begin
+						<h1>Credits</h1>
+						<Link to="/home">
+							Start over
 						</Link>
 					</div>
 				</section>

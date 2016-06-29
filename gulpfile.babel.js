@@ -48,16 +48,18 @@ const paths = {
 	srcSvg: 'src/assets/svg/**',
 	srcFonts: 'src/assets/fonts/**',
 	srcVideos: 'src/assets/videos/**',
-	srcData: 'src/data/**/*.xml',
+	srcSounds: 'src/assets/sounds/**',
+	srcJson: 'src/assets/json/**/*.json',
 	srcIcons: ['src/assets/apple-touch-icon.png',
 						 'src/assets/favicon.ico'],
 	dist: dist,
 	distJs: `${dist}/js`,
 	distImg: `${dist}/images`,
 	distFonts: `${dist}/fonts`,
-	distData: `${dist}/data`,
+	distJson: `${dist}/json`,
 	distSvg: `${dist}/svg`,
-	distVideos: `${dist}/videos`
+	distVideos: `${dist}/videos`,
+	distSounds: `${dist}/sounds`
 }
 
 const customOpts = {
@@ -189,28 +191,21 @@ gulp.task('videos', () => {
 		.pipe(gulp.dest(paths.distVideos))
 })
 
-gulp.task('data', () => {
-	let tasks = []
-	glob(paths.srcData, {}, (error, files) => {
-		files.forEach(file => {
-			const name = file.split('/').pop().split('.')[0]
-			tasks.push(gulp.src(file)
-				.pipe(xml2json())
-				.pipe(rename({
-					basename: name,
-					extname: '.json'
-				}))
-				.pipe(gulp.dest(paths.distData)))
-		})
-	})
-	return merge(tasks)
+gulp.task('json', () => {
+	gulp.src(paths.srcJson)
+		.pipe(gulp.dest(paths.distJson))
+})
+
+gulp.task('sounds', () => {
+	gulp.src(paths.srcSounds)
+		.pipe(gulp.dest(paths.distSounds))
 })
 
 gulp.task('watchTask', () => {
 	gulp.watch(paths.srcJs, ['scripts'])
 	gulp.watch(paths.srcCss, ['styles'])
 	gulp.watch(paths.srcSvg, ['svg'])
-	gulp.watch(paths.srcData, ['data'])
+	gulp.watch(paths.srcJson, ['json'])
 	gulp.watch(paths.srcHtml, ['html'])
 })
 
@@ -223,10 +218,11 @@ gulp.task('watch', cb => {
 		'styles',
 		'svg',
 		'fonts',
-		'data',
+		'json',
 		'videos',
-		// 'images',
-		'icons'
+		'images',
+		'icons',
+		'sounds',
 	]
 	runSequence('clean', sequence, cb)
 })
@@ -242,8 +238,9 @@ gulp.task('preview', cb => {
 		'images',
 		'videos',
 		'fonts',
-		'data',
-		'icons'
+		'json',
+		'icons',
+		'sounds',
 	]
 	runSequence('clean', sequence, cb)
 })
@@ -257,8 +254,9 @@ gulp.task('build', cb => {
 		'images',
 		'videos',
 		'fonts',
-		'data',
-		'icons'
+		'json',
+		'icons',
+		'sounds',
 	]
 	runSequence('clean', sequence, cb)
 })

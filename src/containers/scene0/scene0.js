@@ -11,7 +11,7 @@ import renderer from './webgl/renderer'
 import scene from './webgl/scene'
 const OrbitControls = require('three-orbit-controls')(THREE)
 
-export default class Scene1 extends Component {
+export default class Scene0 extends Component {
 
 	constructor(props) {
 		super(props)
