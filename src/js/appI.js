@@ -19,16 +19,15 @@ var mouseY = 0
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-var dae = null
 var sprite = null
-var sun = null
+var earth = null
+var clouds = null
 var prince = null
+var skyvideo = null
 var skyboxMesh
 var counter = 0
-var counter2 = 0
-var gravityspeed = 0.0002
+var gravityspeed = 0.0008
 var lensFlare = null
-var lookme = new THREE.Vector3(-70, 0, 0) 
 if( flags.debug ){
 		var sunspeed = 0.02
 	}
@@ -69,9 +68,23 @@ require('./lib/three/stats.min.js')
 class App{
 
 	constructor(){
+		if( flags.debug ){
+			$( ".fade" ).toggleClass("debug");
+		} 
+		$('.logo').click(function() {
+			$( ".fade" ).toggleClass("fadeOut");
+			$( ".interface" ).toggleClass("fadeOut");
+		});
+		//$('.fade').click(function() {
+		//	$( ".fade" ).toggleClass("fadeOut");
+		//	$( ".interface" ).toggleClass("fadeOut");
+		//});
+		$( ".fade" ).toggleClass("fadeOut");
+		$( ".interface" ).toggleClass("fadeOut");
+
 
 		c.enable = true;
-		c.log('chapter6');
+		c.log('chapter16');
 
 		this.zoom( cameraDev, 100 );
 		this.zoom( cameraUser, 100 );
@@ -100,10 +113,10 @@ class App{
 		texture.magFilter = THREE.LinearFilter;
 		prince = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), new THREE.MeshPhongMaterial({
 			map: texture,
-			//emissive: 0x14152b,
+			emissive: 0x000000,
 			emissiveMap: texture,
 			//side: THREE.DoubleSide,
-			//color: 0xFFFFFF,
+			color: 0xFFFFFF,
 			transparent: true,
 			alphaTest: 0.25
 		}))
@@ -122,8 +135,35 @@ class App{
 		princeFolder.add(prince.scale, 'x', 0, 2).name('scale x')
 		princeFolder.add(prince.scale, 'y', 0, 2).name('scale y')
 
+		// Sky Video
+		const textureskyvideo = new THREE.VideoTexture(document.getElementById('video-sky'))
+		textureskyvideo.minFilter = THREE.LinearFilter;
+		textureskyvideo.magFilter = THREE.LinearFilter;
+		skyvideo = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), new THREE.MeshPhongMaterial({
+			map: textureskyvideo,
+			emissive: 0xffffff,
+			emissiveMap: textureskyvideo,
+			side: THREE.DoubleSide,
+			color: 0xFFFFFF, 
+			transparent: true
+		}))
+		skyvideo.position.set( 4, -195, -122 )
+		skyvideo.scale.set( 11.6, 7 )
+		//sky.rotation.set( 0, Math.PI/2, 0 )
+		scene.add(skyvideo)
+
+		// GUI
+		let skyVideoFolder = gui.addFolder('SKY-VIDEO')
+		//lightFolder.open()
+		skyVideoFolder.add(skyvideo.position, 'x', -1000, 1000).name('pos x')
+		skyVideoFolder.add(skyvideo.position, 'y', -1000, 1000).name('pos y')
+		skyVideoFolder.add(skyvideo.position, 'z', -1000, 1000).name('pos z')
+	
+		skyVideoFolder.add(skyvideo.scale, 'x', 0, 20).name('scale x')
+		skyVideoFolder.add(skyvideo.scale, 'y', 0, 20).name('scale y')
+
 		//SKYBOX
-		var path = "img/skybox/";
+		var path = "img/skybox12/";
 		var format = '.jpg';
 		var urls = [
 				path + 'px' + format, path + 'nx' + format,
@@ -152,8 +192,7 @@ class App{
 		var shader = THREE.ShaderLib[ "cube" ];
 		shader.uniforms[ "tCube" ].value = reflectionCube;
 		skyboxMesh = new THREE.Mesh( new THREE.BoxGeometry( 1000, 1000, 1000 ), skyMaterial ); 
-		//scene.add(skyboxMesh);
-		
+		scene.add(skyboxMesh); 
 		// GUI
 		let skyFolder = gui.addFolder('SKY')
 		//lightFolder.open()
@@ -210,18 +249,85 @@ class App{
 		scene.add( lensFlare );
 
 
-		// SPHERE - DELETED
-		var geometry = new THREE.SphereGeometry( 5, 16, 16 )
+		// SPHERE
+		var textureLoader = new THREE.TextureLoader();
+
+		var mapA = new THREE.VideoTexture(document.getElementById('video'))
+		mapA.minFilter = THREE.LinearFilter;
+		mapA.magFilter = THREE.LinearFilter;
+		//var mapA = textureLoader.load( "textures/chapter16/earth.jpg" );
+		mapA.wrapS = mapA.wrapT = THREE.RepeatWrapping;
+		mapA.repeat.set( 1.6, 2 );
+		
+		var geometry = new THREE.SphereGeometry( 100, 128, 128 )
 		var material = new THREE.MeshPhongMaterial( {
 			color: 0xffffff, 
-			reflectivity:1, 
-			shading: THREE.FlatShading, 
+			map: mapA,
+			emissive: mapA,
+    		combine: THREE.MixOperation,
+			reflectivity: 0.05, 
+			shading: THREE.SmoothShading, 
 			wireframe:false} )
-		sun = new THREE.Mesh( geometry, material )
-		sun.castShadow = true
-		sun.receiveShadow = false
-		sun.position.set( 0, -30, 0 )
-		//scene.add( sun )
+		earth = new THREE.Mesh( geometry, material )
+		earth.castShadow = false
+		earth.receiveShadow = false
+		
+		earth.position.set( 4, -90, -48 )
+		earth.scale.set( 1, 1.4, 1.7 )
+		earth.rotation.set( 6.6, 11, 2 )
+
+		scene.add( earth )
+
+
+		// SPHERE
+		var textureLoader = new THREE.TextureLoader();
+
+		var mapA = new THREE.VideoTexture(document.getElementById('video'))
+		mapA.minFilter = THREE.LinearFilter;
+		mapA.magFilter = THREE.LinearFilter;
+		//var mapA = textureLoader.load( "textures/chapter16/earth.jpg" );
+		mapA.wrapS = mapA.wrapT = THREE.RepeatWrapping;
+		mapA.repeat.set( 1.6, 2 );
+		
+		var geometry = new THREE.SphereGeometry( 102, 128, 128 )
+		var material = new THREE.MeshPhongMaterial( {
+			color: 0xffffff, 
+			transparent: true,
+			alphaMap: mapA,
+			emissive: mapA,
+    		combine: THREE.MixOperation,
+			reflectivity: 0.05, 
+			shading: THREE.SmoothShading, 
+			wireframe:false} )
+		clouds = new THREE.Mesh( geometry, material )
+		clouds.castShadow = false
+		clouds.receiveShadow = false
+		
+		clouds.position.set( 4, -90, -48 )
+		clouds.scale.set( 1, 1.4, 1.7 )
+		clouds.rotation.set( 6.6, 11, 2 )
+
+		scene.add( clouds )
+
+		// GUI
+			let objectFolder = gui.addFolder('Object')
+			objectFolder.add(earth.position, 'x', -1000, 1000).name('pos x')
+			objectFolder.add(earth.position, 'y', -1000, 1000).name('pos y')
+			objectFolder.add(earth.position, 'z', -1000, 1000).name('pos z')
+			
+			objectFolder.add(mapA.repeat, 'x', -2, 20).name('reap x')
+			objectFolder.add(mapA.repeat, 'y', -2, 20).name('reap y')
+			
+			objectFolder.add(mapA.offset, 'x', -100, 100).name('offset x')
+			objectFolder.add(mapA.offset, 'y', -100, 100).name('offset y')
+
+			objectFolder.add(earth.rotation, 'x', 0, 20).name('rotation x')
+			objectFolder.add(earth.rotation, 'y', 0, 20).name('rotation y')
+			objectFolder.add(earth.rotation, 'z', 0, 20).name('rotation z')
+
+			objectFolder.add(earth.scale, 'x', 0, 20).name('scale x')
+			objectFolder.add(earth.scale, 'y', 0, 20).name('scale y')
+			objectFolder.add(earth.scale, 'z', 0, 20).name('scale z')
 
 		// SPRITE - DELETED
 		var textureLoader = new THREE.TextureLoader();
@@ -241,7 +347,7 @@ class App{
 			}
 
 		// AUDIO
-		var audioFile = 'audio/loop/chapterIntro.mp3';
+		var audioFile = 'audio/loop/chapter6.mp3';
 		var audioListener = new THREE.AudioListener();
 		cameraUser.add( audioListener );
 		var oceanAmbientSound = new THREE.Audio( audioListener );
@@ -259,6 +365,35 @@ class App{
 					oceanAmbientSound.play();
 				}
 				oceanAmbientSound.source.loop = true;
+			},
+			// Function called when download progresses
+			function ( xhr ) {
+				console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+			},
+			// Function called when download errors
+			function ( xhr ) {
+				console.log( 'An error happened' );
+			}
+		);
+		//AUDIO voice
+		var audioFile = 'audio/voice/chapter6.mp3';
+		var audioListener = new THREE.AudioListener();
+		cameraUser.add( audioListener );
+		var voiceSound = new THREE.Audio( audioListener );
+		scene.add( voiceSound );
+		var loader = new THREE.AudioLoader();
+		loader.load(
+			// resource URL
+			audioFile,
+			// Function when resource is loaded
+			function ( audioBuffer ) {
+				// set the audio object buffer to the loaded object
+				voiceSound.setBuffer( audioBuffer );
+				
+				// play the audio
+				if (flags.soundActive == true){
+					voiceSound.play();
+				}
 			},
 			// Function called when download progresses
 			function ( xhr ) {
@@ -292,18 +427,10 @@ class App{
 			dae.position.y = -50;
 			dae.updateMatrix();
 		
-			scene.add( dae );
+			//scene.add( dae );
 			
 			
-			// GUI
-			let objectFolder = gui.addFolder('Object')
-			objectFolder.add(dae.position, 'x', -100, 100).name('pos x')
-			objectFolder.add(dae.position, 'y', -100, 100).name('pos y')
-			objectFolder.add(dae.position, 'z', -100, 100).name('pos z')
-		
-			objectFolder.add(dae.scale, 'x', 0, 100).name('scale x')
-			objectFolder.add(dae.scale, 'y', 0, 100).name('scale y')
-			objectFolder.add(dae.scale, 'z', 0, 100).name('scale z')
+			
 		} );
 		
 		
@@ -314,29 +441,8 @@ class App{
 		this.initscene();
 	}
 	initscene(){
-
-		TweenMax.to(lights.directional, 30, {intensity:0.6})
-		TweenMax.to(lights.point, 30, {intensity:0.6})
-
-		scene.add(prince)
-		scene.add( dae );
-		scene.add(skyboxMesh);
-
-		// play the audio
-		//if (flags.soundActive == true){
-		//	voiceSound.play();
-		//	oceanAmbientSound.play();
-		//}
-
-		prince.material.needsUpdate = true;
-		prince.material.emissive.r = 20/255;
-		prince.material.emissive.g = 21/255;
-		prince.material.emissive.b = 43/255;
-		prince.material.color.r = 20/255;
-		prince.material.color.g = 21/255;
-		prince.material.color.b = 43/255;
-		TweenMax.to(prince.material.emissive, 30, {r: 1, g:1, b:1})
-		TweenMax.to(prince.material.color, 30, {r: 1, g:1, b:1})
+		TweenMax.to(lights.directional, 15, {intensity:1})
+		TweenMax.to(lights.point, 15, {intensity:1})
 
 	}
 
@@ -346,9 +452,9 @@ class App{
 
 	zoom( camera, zoom ){
 		//camera.position.set( Math.cos(Math.PI*0) * zoom, 0.4 * zoom, Math.sin(Math.PI*0) * zoom );
-		cameraUser.position.set( 0, 33, 150 );
-		cameraDev.position.set( 0, 33, 150 );
-		cameraUser.lookAt( lookme );
+		cameraUser.position.set( 0, -28, 119 );
+		cameraDev.position.set( 0, -28, 119 );
+		//camera.lookAt( new THREE.Vector3() );
 	}
 
 	update(){
@@ -380,8 +486,8 @@ class App{
 		renderer.setClearColor( 0x121212 );
 
 		if( !flags.debug ){
-			cameraUser.position.x += ( (mouseX)/40 - cameraUser.position.x ) * .002;
-			cameraUser.position.y += ( ( mouseY)/200 - cameraUser.position.y + 33 ) * .004;
+			cameraUser.position.x += ( (mouseX)/100 - cameraUser.position.x ) * .004;
+			cameraUser.position.y += ( ( mouseY)/20 - cameraUser.position.y ) * .004;
 		} 
 		
 		if (prince != undefined){
@@ -394,11 +500,6 @@ class App{
 			skyboxMesh.rotation.y += 0.0001;
 		}
 		
-		//lights.directional.position.y = Math.sin((counter2) )*150
-		//lights.directional.position.x = Math.cos((counter2/3) )*90
-		//lights.directional.position.z = Math.cos((counter2) )*150
-		//lights.directional.color.setRGB( (Math.sin((counter2) +1)/2)/2+0.5, Math.sin((counter2) +1)/2, Math.sin((counter2)+1)/8.5 );
-
 		if (lensFlare){
 			lensFlare.position.x = lights.directional.position.x;
 			lensFlare.position.y = lights.directional.position.y;
@@ -406,8 +507,7 @@ class App{
 
 		}
   		counter += gravityspeed;
-  		counter2 += sunspeed;
-		camera.lookAt( lookme );
+		camera.lookAt( scene.position );
 
 		renderer.render( scene, camera );
 	}

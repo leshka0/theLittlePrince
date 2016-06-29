@@ -19,7 +19,7 @@ var mouseY = 0
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
-var sprite = null
+var sprite = null 
 var earth = null
 var clouds = null
 var prince = null
@@ -150,7 +150,7 @@ class App{
 		skyvideo.position.set( 4, -195, -122 )
 		skyvideo.scale.set( 11.6, 7 )
 		//sky.rotation.set( 0, Math.PI/2, 0 )
-		scene.add(skyvideo)
+		//scene.add(skyvideo)
 
 		// GUI
 		let skyVideoFolder = gui.addFolder('SKY-VIDEO')
@@ -163,18 +163,16 @@ class App{
 		skyVideoFolder.add(skyvideo.scale, 'y', 0, 20).name('scale y')
 
 		//SKYBOX
-		var path = "img/skybox12/";
+		var path = "img/skybox16/";
 		var format = '.jpg';
 		var urls = [
-				path + 'px' + format, path + 'nx' + format,
-				path + 'py' + format, path + 'ny' + format,
-				path + 'pz' + format, path + 'nz' + format
+				path + 'sky' + format
 			];
 		var materialArray = [];
 
 		for (var i = 0; i < 6; i++)
 			materialArray.push( new THREE.MeshBasicMaterial({
-				map: THREE.ImageUtils.loadTexture( urls[i] ),
+				map: THREE.ImageUtils.loadTexture( urls[0] ),
 				side: THREE.BackSide
 			}));
 		var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
@@ -246,7 +244,7 @@ class App{
 		lensFlare.add( textureFlare4, 900, 1.0, THREE.AdditiveBlending, flareColor );
 		lensFlare.add( textureFlare9, 52, 0.3, THREE.AdditiveBlending, flareColor );
 		lensFlare.position.set(0, 150, 0);
-		scene.add( lensFlare );
+		//scene.add( lensFlare );
 
 
 		// SPHERE
@@ -257,13 +255,20 @@ class App{
 		mapA.magFilter = THREE.LinearFilter;
 		//var mapA = textureLoader.load( "textures/chapter16/earth.jpg" );
 		mapA.wrapS = mapA.wrapT = THREE.RepeatWrapping;
-		mapA.repeat.set( 1.6, 2 );
+		mapA.repeat.set( 3, 3 );
+		mapA.offset.set( -1, -0.4 );
+
+
 		
 		var geometry = new THREE.SphereGeometry( 100, 128, 128 )
 		var material = new THREE.MeshPhongMaterial( {
 			color: 0xffffff, 
 			map: mapA,
-			emissive: mapA,
+			bumpMap: mapA,
+			bumpScale: 0.2,
+			emissive: 0x010713,
+			specularMap: mapA,
+			specular: 0xffffff,
     		combine: THREE.MixOperation,
 			reflectivity: 0.05, 
 			shading: THREE.SmoothShading, 
@@ -273,28 +278,29 @@ class App{
 		earth.receiveShadow = false
 		
 		earth.position.set( 4, -90, -48 )
-		earth.scale.set( 1, 1.4, 1.7 )
+		earth.scale.set( 1, 1, 1 )
 		earth.rotation.set( 6.6, 11, 2 )
 
 		scene.add( earth )
 
-
+ 
 		// SPHERE
 		var textureLoader = new THREE.TextureLoader();
 
-		var mapA = new THREE.VideoTexture(document.getElementById('video'))
-		mapA.minFilter = THREE.LinearFilter;
-		mapA.magFilter = THREE.LinearFilter;
-		//var mapA = textureLoader.load( "textures/chapter16/earth.jpg" );
-		mapA.wrapS = mapA.wrapT = THREE.RepeatWrapping;
-		mapA.repeat.set( 1.6, 2 );
+		var mapB = new THREE.VideoTexture(document.getElementById('video'))
+		mapB.minFilter = THREE.LinearFilter;
+		mapB.magFilter = THREE.LinearFilter;
+		//var mapB = textureLoader.load( "textures/chapter16/earth.jpg" );
+		mapB.wrapS = mapB.wrapT = THREE.RepeatWrapping;
+		mapB.repeat.set( 3, 3 );
+		mapB.offset.set( -1, -0.4 );
 		
 		var geometry = new THREE.SphereGeometry( 102, 128, 128 )
 		var material = new THREE.MeshPhongMaterial( {
 			color: 0xffffff, 
 			transparent: true,
-			alphaMap: mapA,
-			emissive: mapA,
+			alphaMap: mapB,
+			emissive: 0xffffff, 
     		combine: THREE.MixOperation,
 			reflectivity: 0.05, 
 			shading: THREE.SmoothShading, 
@@ -307,7 +313,7 @@ class App{
 		clouds.scale.set( 1, 1.4, 1.7 )
 		clouds.rotation.set( 6.6, 11, 2 )
 
-		scene.add( clouds )
+		//scene.add( clouds )
 
 		// GUI
 			let objectFolder = gui.addFolder('Object')
@@ -318,8 +324,8 @@ class App{
 			objectFolder.add(mapA.repeat, 'x', -2, 20).name('reap x')
 			objectFolder.add(mapA.repeat, 'y', -2, 20).name('reap y')
 			
-			objectFolder.add(mapA.offset, 'x', -100, 100).name('offset x')
-			objectFolder.add(mapA.offset, 'y', -100, 100).name('offset y')
+			objectFolder.add(mapA.offset, 'x', -1, 1).name('offset x')
+			objectFolder.add(mapA.offset, 'y', -1, 1).name('offset y')
 
 			objectFolder.add(earth.rotation, 'x', 0, 20).name('rotation x')
 			objectFolder.add(earth.rotation, 'y', 0, 20).name('rotation y')
@@ -444,6 +450,8 @@ class App{
 		TweenMax.to(lights.directional, 15, {intensity:1})
 		TweenMax.to(lights.point, 15, {intensity:1})
 
+		TweenMax.to(cameraUser.position, 60, {z:40})
+
 	}
 
 	bind() {
@@ -452,7 +460,7 @@ class App{
 
 	zoom( camera, zoom ){
 		//camera.position.set( Math.cos(Math.PI*0) * zoom, 0.4 * zoom, Math.sin(Math.PI*0) * zoom );
-		cameraUser.position.set( 0, -28, 119 );
+		cameraUser.position.set( 0, 28, 300 );
 		cameraDev.position.set( 0, -28, 119 );
 		//camera.lookAt( new THREE.Vector3() );
 	}
@@ -486,8 +494,8 @@ class App{
 		renderer.setClearColor( 0x121212 );
 
 		if( !flags.debug ){
-			cameraUser.position.x += ( (mouseX)/100 - cameraUser.position.x ) * .004;
-			cameraUser.position.y += ( ( mouseY)/20 - cameraUser.position.y ) * .004;
+			cameraUser.position.x += ( (mouseX)/30 - cameraUser.position.x +10 ) * .001;
+			cameraUser.position.y += ( ( mouseY)/30 - cameraUser.position.y ) * .002;
 		} 
 		
 		if (prince != undefined){
